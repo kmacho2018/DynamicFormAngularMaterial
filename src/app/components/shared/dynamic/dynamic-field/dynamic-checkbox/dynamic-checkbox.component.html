@@ -1,0 +1,12 @@
+<form [formGroup]="formName">
+  <!--<label>
+    {{ field.label }}
+    <input type="checkbox" [name]="field.fieldName" [formControlName]="field.fieldName" [value]="field.value" />
+  </label>-->
+
+  <section class="example-section">
+    <mat-checkbox class="example-margin" [name]="field.fieldName" [formControlName]="field.fieldName"
+      [value]="field.value"> {{ field.label }}
+    </mat-checkbox>
+  </section>
+</form>

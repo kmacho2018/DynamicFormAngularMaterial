@@ -1,0 +1,33 @@
+<form [formGroup]="formName">
+  <!--<label>{{field.label}} : </label>
+  <input [type]="field.type" [formControlName]="field.fieldName" />-->
+
+  <mat-form-field appearance="fill" *ngIf="field.type === 'date'">
+    <mat-label>{{field.label}}</mat-label>
+    <input matInput [matDatepicker]="picker" [formControlName]="field.fieldName">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width" *ngIf="field.type === 'text'">
+    <mat-label>{{field.label}}</mat-label>
+    <input matInput placeholder={{field.label}} [formControlName]="field.fieldName">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width" *ngIf="field.type === 'number'">
+    <mat-label>{{field.label}}</mat-label>
+    <input matInput type="number" placeholder={{field.label}} [formControlName]="field.fieldName">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width" *ngIf="field.type === 'textarea'">
+    <mat-label>{{field.label}}</mat-label>
+    <textarea matInput placeholder={{field.label}} [formControlName]="field.fieldName"></textarea>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width" *ngIf="field.type === 'email'">
+    <mat-label>{{field.label}}</mat-label>
+    <input matInput type="email" placeholder={{field.label}} [formControlName]="field.fieldName">
+  </mat-form-field>
+
+</form>
